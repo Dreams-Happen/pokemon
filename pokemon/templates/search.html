@@ -1,0 +1,42 @@
+<html>
+<head>
+
+  <script type="text/javascript" src="{{ url_for('static', filename = 'pokemon.js') }}"></script>
+  <link rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <script>
+      var data = {{data|tojson}}
+  </script>
+  <style>
+
+  .dark{
+    font-weight: bold;
+  }
+
+
+  .red {
+    color: red;
+  }
+
+  img:hover {
+    cursor: pointer;
+  }
+
+  </style>
+</head>
+<body>
+  {% extends "layout.html" %}
+  {% block content %}
+  <div class="container">
+  <div id="results">
+  </div>
+  <div class="row">
+    <div id="firstcol" class="col-md-6">
+    </div>
+    <div id="secondcol" class="col-md-6">
+    </div>
+  </div>
+</div>
+  {% endblock %}
+</body>
+</html>

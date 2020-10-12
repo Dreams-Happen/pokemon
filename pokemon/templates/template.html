@@ -1,0 +1,55 @@
+<html>
+<head>
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <link rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+  <script type="text/javascript" src="{{ url_for('static', filename = 'pokemon.js') }}"></script>
+
+
+  <style>
+
+  .big {
+    font-size: 60px;
+  }
+
+  .med {
+    font-size: 25px;
+  }
+
+
+  </style>
+</head>
+<body>
+  {% extends "layout.html" %}
+  {% block content %}
+
+
+  <div id="name" class=big>{{name}}</div>
+  <br>
+  <img src={{picture}} alt={{name}}>
+  <br>
+  <div id="description">{{description}}
+  <button id="edit">Edit</button>
+  </div>
+  <br>
+  <div id="pokedex"><b class=med>Pokedex:</b> {{pokedex}}
+  <button id="edit2">Edit</button>
+  </div>
+  <br>
+  <b class=med>Abilities:</b>
+  <div id="abilities">
+    {% for ability in abilities %}
+    <div>{{ability}}
+      <button id="{{ability}}" class="ability">X</button>
+    </div>
+    {% endfor %}
+  </div>
+  {% endblock %}
+
+
+</body>
+</html>

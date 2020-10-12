@@ -1,0 +1,47 @@
+<html>
+<head>
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename = 'create.js') }}"></script>
+
+  <script>
+      var data = {{data|tojson}}
+  </script>
+
+  <style>
+
+  .dark {
+    font-weight: bold;
+  }
+  </style>
+</head>
+<body>
+  {% extends "layout.html" %}
+  {% block content %}
+  <div id="newitem">
+  </div>
+  * = required
+  <br>
+  <br>
+  *Name of Pokemon: <input type=text id="name" placeholder="Name"></input>
+  <br>
+  <br>
+  *Picture of Pokemon: <input type=text id="picture" placeholder="URL"></input>
+  <br>
+  <br>
+  *Pokedex: <input type=text id="pokedex" placeholder="Pokedex"></input>
+  <br>
+  <br>
+  *Ability 1: <input type=text id="ability1"></input>
+  <br>
+  Ability 2: <input type=text id="ability2" value=''></input>
+  <br>
+  Ability 3: <input type=text id="ability3" value=''></input>
+  <br>
+  Ability 4: <input type=text id="ability4" value=''></input>
+  <br>
+  <br>
+  *Description: <br><input type=textarea id="description" style="height:200px;font-size:14pt;" placeholder="Write a description of the Pokemon"></input>
+  <button id="submit">Submit</button>
+{% endblock %}
+</body>
+</html>

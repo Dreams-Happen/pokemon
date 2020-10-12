@@ -1,0 +1,36 @@
+
+<html>
+<head>
+
+  <script type="text/javascript" src="{{ url_for('static', filename = 'pokemon.js') }}"></script>
+  <script>
+      var data = {{data|tojson}}
+  </script>
+  <style>
+    .red {
+      color: red;
+    }
+
+    img:hover {
+    cursor: pointer;
+    }
+  </style>
+
+
+</head>
+<body>
+{% extends "layout.html" %}
+
+  {% block content %}
+  <div class="container">
+  This website contains information of first generation pokemon for gamers and pokenerds.
+  <div class="row">
+    <div id="firstcol" class="col-md-6">
+    </div>
+    <div id="secondcol" class="col-md-6">
+    </div>
+  </div>
+</div>
+  {% endblock %}
+</body>
+</html>

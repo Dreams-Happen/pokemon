@@ -1,0 +1,14 @@
+<html>
+<head>
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename = 'edit.js') }}"></script>
+  <link rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+</head>
+<body>
+  <input id="descriptor" type=textarea style="height:200px;font-size:14pt;" value='{{description}}'></input>
+  <button id="submit">Submit</button>
+  <button id="discard">Discard Changes</button>
+</body>
+</html>
